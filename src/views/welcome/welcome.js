@@ -5,9 +5,4 @@ export default {
   components: {
     WidButton
   },
-  methods: {
-    onClick () {
-      console.log('cli')
-    }
-  },
 }
