@@ -1,7 +1,5 @@
-
 #  Introducción al proyecto test global66 (Pokémons favoritos)
 
-  
 Antes de iniciar el proyecto se revisó los requerimientos enviados al correo para saber que se debía implementar.
 
 Se debe usar el framework vue.js así que la decisión que se tomó es usar el CLI de vue desarrollado por el mismo equipo de vue.js esto nos ayuda a llevar una estructura estándar y mejor la transición para los desarrolladores nuevos.
@@ -12,71 +10,122 @@ Se creó una carpeta llamada widgets para los componentes que son átomos como (
 
 Los iconos se crearon como componentes para poder aprovechar la modificación de tamaño y color con css.
 
+
 Las imágenes que se van a utilizar se optimizaron para que tengan un menor peso y pueda cargar mucho más rápido.
 
-Se crearon variables globales de sass para la reutilización de colores, fuentes, sombras, tamaños y  bordes en todos los componentes.
+Se crearon variables globales de sass para la reutilización de colores, fuentes, sombras, tamaños y bordes en todos los componentes.
 
 Se agregó reset css para formatear los estilos predefinidos de los navegadores y queden estándar para todos.
 
 Se agregó box-sizing global para evitar que los padding y border generen tamaños no deseados en las cajas.
 
-Los componentes se dividieron en archivos vue, scss y js. 
+Los componentes se dividieron en archivos vue, scss y js.
 
 Los estilos de cada componente están con scoped.
 
-Se creo una instancia de axios con la url base del api rest.
+Se creó una instancia de axios con la url base del api rest.
 
+##  Implementación
+
+Para agregar la vista de  bienvenida se usó el alias para la imagen de pikachu se trabaja de esta forma por ser buena práctica si se copia el mismo código en otra parte del proyecto no va a llorar por rutas la altura minima de la venta de la vista  de bienvenida es 100vh combinada con flex para centrar la información esto se hace para tener presente las pantallas independientemente la altura y el ancho. 
+
+Se creó un componente  llamado Loading con una pequeña animación se importó en el archivo App.vue para que quede global y se pueda usar en toda la aplicación se combinó con vuex para poder activarlo y desactivarlo de una manera más sencilla.
+
+Se dejó preparado el store con las solicitudes a la api esto nos ayuda a que la aplicación sea más escalable
+  
 
 ##  Project setup
 
+  
+
 ```
+
+  
 
 yarn install
 
+  
+
 ```
+
+  
 
   
 
 ###  Compiles and hot-reloads for development
 
+  
+
 ```
+
+  
 
 yarn serve
 
+  
+
 ```
+
+  
 
   
 
 ###  Compiles and minifies for production
 
+  
+
 ```
+
+  
 
 yarn build
 
+  
+
 ```
+
+  
 
   
 
 ###  Run your unit tests
 
+  
+
 ```
+
+  
 
 yarn test:unit
 
+  
+
 ```
+
+  
 
   
 
 ###  Lints and fixes files
 
-```
-
-yarn lint
+  
 
 ```
 
   
 
+yarn lint
+
+  
+
+```
+
+  
+
+  
+
 ###  Customize configuration
+
+  
 
 See [Configuration Reference](https://cli.vuejs.org/config/).

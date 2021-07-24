@@ -2,7 +2,7 @@
   <section class="welcome">
     <div class="welcome__content">
       <div class="pikachu__content">
-        <img src="../../assets/images/pikachu.png" alt="welcome pickachu">
+        <img src="@/assets/images/pikachu.png" alt="welcome pickachu">
       </div>
 
       <h1>Welcome to Pokédex</h1>
