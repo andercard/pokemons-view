@@ -1,20 +1,21 @@
 import { mapActions, mapGetters, mapMutations } from 'vuex';
-import IconStar from '@/widgets/iconStar/iconStar.vue';
-import IconAll from '@/widgets/iconAll/iconAll.vue';
-import IconSearch from '@/widgets/iconSearch/iconSearch.vue';
+import Search from '@/widgets/search/search.vue';
 
 export default {
   name: 'Home',
   components: {
-    IconStar,
-    IconAll,
-    IconSearch,
+    Search,
   },
   mounted() {
     this.onPokemons();
   },
   computed: {
     ...mapGetters(['getPokemons']),
+  },
+  data() {
+    return {
+      input: 'que'
+    }
   },
   methods: {
     ...mapActions(['action_getPokemons']),
@@ -28,6 +29,12 @@ export default {
       } finally {
         this.IS_LOADING(false);
       }
+    },
+    onInput (e) {
+      console.log( e)
+    },
+    onEnter (e) {
+      console.log('e', e.target.value)
     }
   }
 }

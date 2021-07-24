@@ -1,10 +1,7 @@
 <template>
   <div class="home">
-    <h5>Hola</h5>
-    <div class="icon">
-      <IconStar />
-      <IconSearch />
-      <IconAll />
+    <div class="home__content">
+      <Search @input="onInput" :value="input" />
     </div>
   </div>
 </template>

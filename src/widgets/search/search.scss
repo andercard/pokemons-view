@@ -1,0 +1,24 @@
+.search {
+  display: flex;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  background-color: $white;
+  padding: 0 0.875rem;
+  svg {
+    width: 1.125rem;
+    fill: $gray;
+  }
+  input {
+    margin-left: 0.625rem;
+    width: 100%;
+    border: none;
+    padding: 0.875rem 0;
+    color: $light-black;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: $gray;
+    }
+  }
+}
