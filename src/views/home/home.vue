@@ -2,6 +2,14 @@
   <div class="home">
     <div class="home__content">
       <Search @input="onInput" :value="input" />
+      <div class="home__list">
+        <ItemList
+          v-for="item in list" :key="item.name"
+          :isActive="item.active"
+          :name="item.name"
+          @favorite="onFavorite(item)"
+          @open="onOpen(item)" />
+      </div>
     </div>
   </div>
 </template>

@@ -7,3 +7,10 @@
   max-width: 35.625rem;
   margin: 0 auto;
 }
+
+.home__list {
+  margin: 2.5rem 0;
+  display: grid;
+  row-gap: 0.625rem;
+  min-width: 1px;
+}

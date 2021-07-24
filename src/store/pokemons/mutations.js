@@ -5,4 +5,7 @@ export default {
   POKEMONS (store, data) {
     store.pokemons = data
   },
+  FAVORITES (store, data) {
+    store.favorites = data
+  },
 }

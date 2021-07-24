@@ -1,25 +1,30 @@
 import { mapActions, mapGetters, mapMutations } from 'vuex';
 import Search from '@/widgets/search/search.vue';
+import ItemList from '@/components/itemList/itemList.vue';
 
 export default {
   name: 'Home',
   components: {
     Search,
+    ItemList,
   },
   mounted() {
     this.onPokemons();
   },
   computed: {
-    ...mapGetters(['getPokemons']),
+    ...mapGetters(['getPokemons', 'getFavorites']),
+    list () {
+      return this.getPokemons
+    }
   },
   data() {
     return {
-      input: 'que'
+      input: ''
     }
   },
   methods: {
     ...mapActions(['action_getPokemons']),
-    ...mapMutations(['IS_LOADING']),
+    ...mapMutations(['IS_LOADING', 'FAVORITES']),
     async onPokemons () {
       try {
         this.IS_LOADING(true);
@@ -35,6 +40,26 @@ export default {
     },
     onEnter (e) {
       console.log('e', e.target.value)
-    }
+    },
+    onFavorite (pokemon) {
+      let findIndex = -1;
+      let favorites = this.getFavorites;
+
+      if (favorites.length) {
+        findIndex = favorites.findIndex(item => item.name === pokemon.name)
+      }
+
+      if (findIndex >= 0) {
+        favorites.splice(findIndex, 1);
+      } else {
+        favorites = [...favorites, pokemon];
+      }
+
+      this.FAVORITES(favorites);
+
+    },
+    onOpen (e) {
+      console.log('onOpen', e)
+    },
   }
 }
