@@ -1,0 +1,59 @@
+.welcome {
+  padding: 4rem 1.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+}
+
+.welcome__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 35.625rem;
+  h1 {
+    font-size: $size-5;
+    margin: 0;
+  }
+  p {
+    margin: 1.875rem 0 3.125rem 0;
+    color: $dark-gray;
+    text-align: center;
+    line-height: 1.4;
+    font-size: $size-2;
+  }
+}
+
+.pikachu__content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 4.5rem;
+  &:after {
+    content: '';
+    width: 12.813rem;
+    height: 12.813rem;
+    border: 3px solid $black;
+    border-radius: 50%;
+    background-color: $primary;
+    position: absolute;
+  }
+  img {
+    position: relative;
+    left: 24px;
+    width: 100%;
+    max-width: 17.5rem;
+    z-index: 20;
+  }
+}
+
+.icon {
+  fill: $dark-gray;
+  width: 30px;
+}
+
+.button {
+  fill:tomato;
+}
