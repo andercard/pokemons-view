@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <div class="home__content">
-      <Search @input="onInput" :value="input" />
-      <div class="home__list">
+      <Search @input="onInput" />
+      <div v-if="list.length" class="home__list">
         <ItemList
           v-for="item in list" :key="item.name"
           :isActive="item.active"
@@ -10,6 +10,7 @@
           @favorite="onFavorite(item)"
           @open="onOpen(item)" />
       </div>
+      <EmptyList class="empty" @click="onEmpty" v-else />
     </div>
   </div>
 </template>

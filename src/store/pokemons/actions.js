@@ -13,7 +13,6 @@ export default {
         params
       })
 
-      console.log(data)
       commit('POKEMONS', data)
       return data
     } catch (error) {

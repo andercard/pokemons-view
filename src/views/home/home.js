@@ -1,12 +1,14 @@
 import { mapActions, mapGetters, mapMutations } from 'vuex';
 import Search from '@/widgets/search/search.vue';
 import ItemList from '@/components/itemList/itemList.vue';
+import EmptyList from '@/components/emptyList/emptyList.vue';
 
 export default {
   name: 'Home',
   components: {
     Search,
     ItemList,
+    EmptyList,
   },
   mounted() {
     this.onPokemons();
@@ -14,7 +16,15 @@ export default {
   computed: {
     ...mapGetters(['getPokemons', 'getFavorites']),
     list () {
-      return this.getPokemons
+      const pokemons = this.getPokemons;
+
+      if (this.input) {
+        return pokemons.filter(item => {
+          return item.name.toLowerCase().indexOf(this.input.toLowerCase()) > -1
+        })
+      }
+
+      return pokemons;
     }
   },
   data() {
@@ -36,10 +46,7 @@ export default {
       }
     },
     onInput (e) {
-      console.log( e)
-    },
-    onEnter (e) {
-      console.log('e', e.target.value)
+      this.input = e;
     },
     onFavorite (pokemon) {
       let findIndex = -1;
@@ -61,5 +68,8 @@ export default {
     onOpen (e) {
       console.log('onOpen', e)
     },
+    onEmpty () {
+      this.input = ''
+    }
   }
 }
