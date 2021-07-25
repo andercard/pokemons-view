@@ -13,6 +13,10 @@
       <EmptyList class="empty" @click="onEmpty" v-else />
     </div>
     <BottomBar @click="onChangeMenu" :active="menuActive" :items="menu" />
+    <Detail
+      @close="onToggleDetail"
+      @favorite="onFavorite"
+      :show="showDetail" />
   </div>
 </template>
 

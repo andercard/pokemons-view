@@ -1,6 +1,17 @@
 export default {
   getPokemon (store) {
-    return store.pokemon;
+    let pokemon = store.pokemon;
+    const favorites = store.favorites;
+
+    if (favorites.length && pokemon) {
+      const findIndex = favorites.findIndex(item => item.name === pokemon.name)
+
+      let active = false;
+      if (findIndex >= 0) active = true;
+
+      pokemon = { ...pokemon, active }
+    }
+    return pokemon;
   },
   getPokemons (store) {
     const pokemons = store.pokemons;
@@ -24,7 +35,6 @@ export default {
       }
       return list;
     }
-
 
     return pokemons ? pokemons.results.map(item => ({ ...item, active: false })) : [];
   },

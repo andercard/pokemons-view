@@ -3,6 +3,7 @@ import Search from '@/widgets/search/search.vue';
 import ItemList from '@/components/itemList/itemList.vue';
 import EmptyList from '@/components/emptyList/emptyList.vue';
 import BottomBar from '@/components/bottomBar/bottomBar.vue';
+import Detail from '@/components/detail/detail.vue';
 
 export default {
   name: 'Home',
@@ -11,6 +12,7 @@ export default {
     ItemList,
     EmptyList,
     BottomBar,
+    Detail,
   },
   mounted() {
     this.onPokemons();
@@ -23,6 +25,7 @@ export default {
         { text: 'Favorites', icon: 'star' },
       ],
       menuActive: 'All',
+      showDetail: false,
     }
   },
   computed: {
@@ -40,14 +43,16 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['action_getPokemons']),
+    ...mapActions(['action_getPokemons', 'action_getPokemon']),
     ...mapMutations(['IS_LOADING', 'FAVORITES']),
     async onPokemons () {
       try {
+
         this.IS_LOADING(true);
-        await this.action_getPokemons()
+        await this.action_getPokemons();
+
       } catch (error) {
-        alert('error en el servidor')
+        alert('Error server');
       } finally {
         this.IS_LOADING(false);
       }
@@ -72,8 +77,21 @@ export default {
       this.FAVORITES(favorites);
 
     },
-    onOpen (e) {
-      console.log('onOpen', e);
+    onToggleDetail () {
+      this.showDetail = !this.showDetail;
+    },
+    async onOpen (e) {
+      try {
+
+        this.IS_LOADING(true);
+        await this.action_getPokemon(e.name);
+        this.onToggleDetail();
+
+      } catch (error) {
+        alert('Error server');
+      } finally {
+        this.IS_LOADING(false);
+      }
     },
     onEmpty () {
       this.input = '';

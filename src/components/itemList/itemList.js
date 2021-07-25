@@ -1,9 +1,11 @@
 import IconStar from '@/widgets/iconStar/iconStar.vue';
+import ButtonFavorite from '@/components/buttonFavorite/buttonFavorite.vue';
 
 export default {
   name: 'ItemList',
   components: {
-    IconStar
+    IconStar,
+    ButtonFavorite,
   },
   props: {
     isActive: {
