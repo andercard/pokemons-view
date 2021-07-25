@@ -13,5 +13,5 @@
   </div>
 </template>
 
-<script src="./bottomBar.js"></script>
-<style src="./bottomBar.scss" scoped lang="scss"></style>
+<script src="./menuBar.js"></script>
+<style src="./menuBar.scss" scoped lang="scss"></style>

@@ -2,7 +2,7 @@ import { mapActions, mapGetters, mapMutations } from 'vuex';
 import Search from '@/widgets/search/search.vue';
 import ItemList from '@/components/itemList/itemList.vue';
 import EmptyList from '@/components/emptyList/emptyList.vue';
-import BottomBar from '@/components/bottomBar/bottomBar.vue';
+import MenuBar from '@/components/menuBar/menuBar.vue';
 import Detail from '@/components/detail/detail.vue';
 
 export default {
@@ -11,7 +11,7 @@ export default {
     Search,
     ItemList,
     EmptyList,
-    BottomBar,
+    MenuBar,
     Detail,
   },
   mounted() {

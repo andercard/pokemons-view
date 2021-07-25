@@ -1,4 +1,4 @@
-import WidButton from '@/widgets/button/button.vue';
+import WidButton from '@/widgets/widButton/widButton.vue';
 
 export default {
   name: 'BottomBar',

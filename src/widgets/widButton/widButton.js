@@ -3,7 +3,7 @@ import IconAll from '@/widgets/iconAll/iconAll.vue';
 
 
 export default {
-  name: 'button',
+  name: 'WidButton',
   components: {
     IconStar,
     IconAll

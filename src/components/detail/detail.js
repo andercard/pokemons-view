@@ -1,6 +1,6 @@
 import { mapGetters } from 'vuex';
 import IconClose from '@/widgets/iconClose/iconClose.vue';
-import WidButton from '@/widgets/button/button.vue';
+import WidButton from '@/widgets/widButton/widButton.vue';
 import ButtonFavorite from '@/components/buttonFavorite/buttonFavorite.vue';
 
 export default {
