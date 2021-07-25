@@ -1,0 +1,18 @@
+.bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: $white;
+  box-shadow: $shadow-2;
+  width: 100%;
+  padding: 1.125rem 1.875rem;
+}
+
+.bar__content {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 0.625rem));
+  width: 100%;
+  max-width: 35.625rem;
+  margin: 0 auto;
+  column-gap: 1.25rem;
+}

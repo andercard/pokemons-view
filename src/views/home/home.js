@@ -2,6 +2,7 @@ import { mapActions, mapGetters, mapMutations } from 'vuex';
 import Search from '@/widgets/search/search.vue';
 import ItemList from '@/components/itemList/itemList.vue';
 import EmptyList from '@/components/emptyList/emptyList.vue';
+import BottomBar from '@/components/bottomBar/bottomBar.vue';
 
 export default {
   name: 'Home',
@@ -9,14 +10,25 @@ export default {
     Search,
     ItemList,
     EmptyList,
+    BottomBar,
   },
   mounted() {
     this.onPokemons();
   },
+  data() {
+    return {
+      input: '',
+      menu: [
+        { text: 'All', icon: 'all' },
+        { text: 'Favorites', icon: 'star' },
+      ],
+      menuActive: 'All',
+    }
+  },
   computed: {
     ...mapGetters(['getPokemons', 'getFavorites']),
     list () {
-      const pokemons = this.getPokemons;
+      const pokemons = this.menuActive === 'All' ? this.getPokemons : this.getFavorites;
 
       if (this.input) {
         return pokemons.filter(item => {
@@ -25,11 +37,6 @@ export default {
       }
 
       return pokemons;
-    }
-  },
-  data() {
-    return {
-      input: ''
     }
   },
   methods: {
@@ -59,17 +66,21 @@ export default {
       if (findIndex >= 0) {
         favorites.splice(findIndex, 1);
       } else {
-        favorites = [...favorites, pokemon];
+        favorites = [...favorites, { ...pokemon, active: true }];
       }
 
       this.FAVORITES(favorites);
 
     },
     onOpen (e) {
-      console.log('onOpen', e)
+      console.log('onOpen', e);
     },
     onEmpty () {
-      this.input = ''
+      this.input = '';
+      this.menuActive = 'All';
+    },
+    onChangeMenu (e) {
+      this.menuActive = e.text;
     }
   }
 }

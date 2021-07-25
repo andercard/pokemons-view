@@ -22,6 +22,9 @@
     background-color: $gray;
     cursor: no-drop;
   }
+  &.disabled {
+    background-color: $gray;
+  }
   &.small {
     padding: 0.4rem 1rem;
     font-size: $size-1;

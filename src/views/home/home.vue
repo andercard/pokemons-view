@@ -12,6 +12,7 @@
       </div>
       <EmptyList class="empty" @click="onEmpty" v-else />
     </div>
+    <BottomBar @click="onChangeMenu" :active="menuActive" :items="menu" />
   </div>
 </template>
 
