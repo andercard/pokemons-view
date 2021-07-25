@@ -1,3 +1,4 @@
+![](https://raw.githubusercontent.com/andercard/pokemons-view/master/src/assets/images/banner.jpeg)
 
 #  Introducción al proyecto test global66 (Pokémons favoritos)
 
@@ -37,6 +38,12 @@ Para la reutilización de componentes se dividió los iconos en svg, el campo de
 Para simular los favoritos se usó el vuex y la persistencia del store esto quiere decir que si se recarga la página los favoritos se mantienen. A la información que nos devuelve la api  se le añadió un flag custom que indica si está en favorito o no. 
 
 Se creó una lista para poder agregar todos los pokemon que están en favoritos.
+
+![](https://raw.githubusercontent.com/andercard/pokemons-view/master/src/assets/screenshots/01.png)
+![](https://raw.githubusercontent.com/andercard/pokemons-view/master/src/assets/screenshots/02.png)
+![](https://raw.githubusercontent.com/andercard/pokemons-view/master/src/assets/screenshots/03.png)
+![](https://raw.githubusercontent.com/andercard/pokemons-view/master/src/assets/screenshots/04.png)
+![](https://raw.githubusercontent.com/andercard/pokemons-view/master/src/assets/screenshots/05.png)
 
 ##  Project setup
 
